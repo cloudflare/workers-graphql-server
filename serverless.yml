@@ -1,0 +1,25 @@
+# Remember to also set the CLOUDFLARE_AUTH_KEY and CLOUDFLARE_AUTH_EMAIL auth keys:
+# The dotenv plugin will do this for you automatically if you place them in .env.
+
+service:
+  name: graphql-on-workers
+
+provider:
+  name: cloudflare
+  config:
+    accountId: ${env:CLOUDFLARE_ACCOUNT_ID}
+    zoneId: ${env:CLOUDFLARE_ZONE_ID}
+
+plugins:
+  - serverless-cloudflare-workers
+  - serverless-dotenv-plugin
+
+functions:
+  worker:
+    name: graphql-on-workers
+    script: index
+    webpack: webpack.config
+    events:
+      - http:
+          url: ${env:WORKER_ROUTE}
+          method: GET
