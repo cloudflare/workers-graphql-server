@@ -12,8 +12,5 @@
     "serverless-webpack": "^5.2.0"
   },
   "license": "MIT",
-  "main": "n/a",
-  "devDependencies": {
-    "compression-webpack-plugin": "^2.0.0"
-  }
+  "main": "n/a"
 }

@@ -19,10 +19,18 @@ const server = new ApolloServer({
   resolvers,
 })
 
+const handleRequest = async request => {
+  const url = new URL(request.url)
+  if (request.pathname === '/graphql') {
+    return graphqlCloudflare(() => server.createGraphQLServerOptions(request))(request)
+  } else if (request.pathname === '/graphiql') {
+    // graphiql here
+    return new Response('ok')
+  } else {
+    return new Response('Not found', { status: 404 })
+  }
+}
+
 addEventListener('fetch', event => {
-  event.respondWith(
-    graphqlCloudflare(() => {
-      return server.createGraphQLServerOptions(event.request)
-    })(event.request),
-  )
+  event.respondWith(handleRequest)
 })

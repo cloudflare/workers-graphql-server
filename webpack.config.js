@@ -1,4 +1,4 @@
-const CompressionPlugin = require('compression-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -6,8 +6,9 @@ module.exports = {
   plugins: [new CompressionPlugin()],
   resolve: {
     alias: {
-      fs: path.resolve(__dirname, './null.js'), // module.exports = {}
+      'apollo-engine-reporting': path.resolve(__dirname, './null.js'),
       busboy: path.resolve(__dirname, './null.js'),
+      fs: path.resolve(__dirname, './null.js'),
     },
   },
   mode: 'production',
