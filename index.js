@@ -21,16 +21,18 @@ const server = new ApolloServer({
 
 const handleRequest = async request => {
   const url = new URL(request.url)
-  if (request.pathname === '/graphql') {
-    return graphqlCloudflare(() => server.createGraphQLServerOptions(request))(request)
-  } else if (request.pathname === '/graphiql') {
-    // graphiql here
-    return new Response('ok')
-  } else {
-    return new Response('Not found', { status: 404 })
+  try {
+    if (url.pathname === '/graphql') {
+      return graphqlCloudflare(() => server.createGraphQLServerOptions(request))(request)
+    } else if (url.pathname === '/graphiql') {
+      // graphiql here
+      return new Response('ok')
+    } else {
+      return new Response('Not found', { status: 404 })
+    }
+  } catch (err) {
+    return new Response(err, { status: 500 })
   }
 }
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest)
-})
+addEventListener('fetch', event => event.respondWith(handleRequest(event.request)))
