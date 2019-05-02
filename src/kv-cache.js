@@ -1,6 +1,7 @@
 class KVCache {
   get(key) {
-    return GRAPHQL_ON_WORKERS.get(key)
+    const encodedKey = encodeURIComponent(key)
+    return GRAPHQL_ON_WORKERS.get(encodedKey)
   }
 
   set(key, value, options) {
@@ -9,7 +10,8 @@ class KVCache {
     if (ttl) {
       opts.expirationTtl = ttl
     }
-    return GRAPHQL_ON_WORKERS.put(key, value, opts)
+    const encodedKey = encodeURIComponent(key)
+    return GRAPHQL_ON_WORKERS.put(encodedKey, value, opts)
   }
 }
 

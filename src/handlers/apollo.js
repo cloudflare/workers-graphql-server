@@ -4,7 +4,7 @@ const { PokemonAPI } = require('../pokeapi')
 const { KVCache } = require('../kv-cache')
 
 const typeDefs = gql`
-  type PokemonSprite {
+  type PokemonSprites {
     front_default: String!
     front_shiny: String!
     front_female: String!
@@ -20,7 +20,7 @@ const typeDefs = gql`
     name: String!
     height: Int!
     weight: Int!
-    sprites: [PokemonSprite]
+    sprites: PokemonSprites!
   }
 
   type Query {

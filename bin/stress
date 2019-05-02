@@ -1,0 +1,1 @@
+ab -k -c 350 -n 2000 "https://graphql-on-workers.signalnerve.com/graphql?query=%7Bpokemon(id%3A%201)%20%7Bid%20name%20sprites%20%7Bfront_default%7D%7D%7D"
