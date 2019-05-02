@@ -1,22 +1,35 @@
 const { ApolloServer, gql } = require('apollo-server-cloudflare')
 const { graphqlCloudflare } = require('apollo-server-cloudflare/dist/cloudflareApollo')
+const { PokemonAPI } = require('../pokeapi')
+const { KVCache } = require('../kv-cache')
 
 const typeDefs = gql`
+  type Pokemon {
+    id: ID!
+    name: String!
+  }
+
   type Query {
-    hello: String
+    pokemon(id: ID!): Pokemon
   }
 `
 
 const resolvers = {
   Query: {
-    hello: () => 'Hello world!',
+    pokemon: async (_source, { id }, { dataSources }) => {
+      return dataSources.pokemonAPI.getPokemon(id)
+    },
   },
 }
 
 const server = new ApolloServer({
   typeDefs,
-  introspection: true,
   resolvers,
+  introspection: true,
+  cache: new KVCache(),
+  dataSources: () => ({
+    pokemonAPI: new PokemonAPI(),
+  }),
 })
 
 const handler = request =>
