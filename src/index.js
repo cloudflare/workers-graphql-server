@@ -1,5 +1,5 @@
-const apollo = require('./src/handlers/apollo')
-const graphiql = require('./src/handlers/graphiql')
+const apollo = require('./handlers/apollo')
+const graphiql = require('./handlers/graphiql')
 
 const handleRequest = async request => {
   const url = new URL(request.url)

@@ -7,11 +7,8 @@
   "dependencies": {
     "apollo-datasource-rest": "^0.3.2",
     "apollo-server-cloudflare": "^2.4.8",
-    "graphql": "^14.2.1",
-    "serverless-cloudflare-workers": "^1.2.0",
-    "serverless-dotenv-plugin": "^2.0.1",
-    "serverless-webpack": "^5.2.0"
+    "graphql": "^14.2.1"
   },
   "license": "MIT",
-  "main": "n/a"
+  "main": "src/index.js"
 }
