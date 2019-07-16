@@ -4,6 +4,8 @@ An [Apollo GraphQL](https://www.apollographql.com/) server, built with [Cloudfla
 
 [Try a demo by looking at the GraphiQL explorer](https://graphql-on-workers.signalnerve.com/graphiql).
 
+Why this rules: Cloudflare Workers is a serverless application platform for deploying your projects across Cloudflare's massive distributed network. Deploying your GraphQL application to the edge is a huge opportunity to build consistent low-latency API servers, with the added benefits of "serverless" (I know, the project has `server` in it): usage-based pricing, no cold starts, and instant, easy-to-use deployment software, using [Wrangler](https://github.com/cloudflare/wrangler).
+
 ## Usage
 
 You can begin building your own Workers GraphQL server by [installing Wrangler](https://workers.cloudflare.com/docs/quickstart/), the Workers command-line tool, and generating a new project:
