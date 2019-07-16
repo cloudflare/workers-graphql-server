@@ -1,7 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server-cloudflare')
 const { graphqlCloudflare } = require('apollo-server-cloudflare/dist/cloudflareApollo')
 const { PokemonAPI } = require('../pokeapi')
-const { KVCache } = require('../kv-cache')
 
 const typeDefs = gql`
   type PokemonSprites {
@@ -40,7 +39,6 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  cache: new KVCache(),
   dataSources: () => ({
     pokemonAPI: new PokemonAPI(),
   }),
