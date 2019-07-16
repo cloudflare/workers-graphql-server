@@ -1,6 +1,0 @@
-name = "workers-graphql"
-type = "webpack"
-private = false
-route = "yoururl.com/*"
-account_id = "abc123"
-zone_id = "def456"

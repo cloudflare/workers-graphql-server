@@ -1,9 +1,9 @@
 {
-  "name": "graphql-on-workers",
+  "name": "{{ project-name }}",
   "private": true,
-  "description": "graphql-on-workers",
-  "version": "0.9.9",
-  "author": "Kristian Freeman <kristian@kristianfreeman.com>",
+  "description": "🔥Lightning-fast, globally distributed Apollo GraphQL server, deployed at the edge using Cloudflare Workers",
+  "version": "1.1.0",
+  "author": "{{ authors }}",
   "dependencies": {
     "apollo-datasource-rest": "^0.3.2",
     "apollo-server-cloudflare": "^2.4.8",
