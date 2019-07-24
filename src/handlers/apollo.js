@@ -44,7 +44,7 @@ const server = new ApolloServer({
   }),
 })
 
-const handler = request =>
+const handler = (request, _graphQLOptions) =>
   graphqlCloudflare(() => server.createGraphQLServerOptions(request))(request)
 
 module.exports = handler
