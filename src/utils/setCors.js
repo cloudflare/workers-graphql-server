@@ -1,8 +1,19 @@
-const setCorsHeaders = response => {
-  response.headers.set('Access-Control-Allow-Origin', '*')
-  response.headers.set('Access-Control-Allow-Credentials', 'true')
-  response.headers.set('Access-Control-Allow-Methods', 'GET,POST')
-  response.headers.set('Access-Control-Allow-Headers', 'application/json, Content-type')
+const setCorsHeaders = (response, config) => {
+  const corsConfig = config instanceof Object ? config : false
+
+  response.headers.set(
+    'Access-Control-Allow-Credentials',
+    corsConfig ? corsConfig.allowCredentials : 'true',
+  )
+  response.headers.set(
+    'Access-Control-Allow-Headers',
+    corsConfig ? corsConfig.allowHeaders : 'application/json, Content-type',
+  )
+  response.headers.set(
+    'Access-Control-Allow-Methods',
+    corsConfig ? corsConfig.allowMethods : 'GET, POST',
+  )
+  response.headers.set('Access-Control-Allow-Origin', corsConfig ? corsConfig.allowOrigin : '*')
   response.headers.set('X-Content-Type-Options', 'nosniff')
 }
 
