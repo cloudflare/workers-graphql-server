@@ -11,4 +11,4 @@ class PokemonAPI extends RESTDataSource {
   }
 }
 
-module.exports = { PokemonAPI }
+module.exports = PokemonAPI
