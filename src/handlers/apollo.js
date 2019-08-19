@@ -1,47 +1,19 @@
-const { ApolloServer, gql } = require('apollo-server-cloudflare')
+const { ApolloServer } = require('apollo-server-cloudflare')
 const { graphqlCloudflare } = require('apollo-server-cloudflare/dist/cloudflareApollo')
-const { PokemonAPI } = require('../pokeapi')
 
-const typeDefs = gql`
-  type PokemonSprites {
-    front_default: String!
-    front_shiny: String!
-    front_female: String!
-    front_shiny_female: String!
-    back_default: String!
-    back_shiny: String!
-    back_female: String!
-    back_shiny_female: String!
-  }
+const PokemonAPI = require('./datasources/pokeapi')
+const resolvers = require('../resolvers')
+const typeDefs = require('../schema')
 
-  type Pokemon {
-    id: ID!
-    name: String!
-    height: Int!
-    weight: Int!
-    sprites: PokemonSprites!
-  }
-
-  type Query {
-    pokemon(id: ID!): Pokemon
-  }
-`
-
-const resolvers = {
-  Query: {
-    pokemon: async (_source, { id }, { dataSources }) => {
-      return dataSources.pokemonAPI.getPokemon(id)
-    },
-  },
-}
+const dataSources = () => ({
+  pokemonAPI: new PokemonAPI(),
+})
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  dataSources: () => ({
-    pokemonAPI: new PokemonAPI(),
-  }),
+  dataSources,
 })
 
 const handler = (request, _graphQLOptions) =>
