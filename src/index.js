@@ -1,5 +1,6 @@
 const apollo = require('./handlers/apollo')
 const playground = require('./handlers/playground')
+const setCors = require('./utils/setCors')
 
 const graphQLOptions = {
   // Set the path for the GraphQL server
@@ -17,7 +18,12 @@ const handleRequest = request => {
   const url = new URL(request.url)
   try {
     if (url.pathname === graphQLOptions.baseEndpoint) {
-      return apollo(request, graphQLOptions)
+      const response =
+        request.method === 'OPTIONS'
+          ? new Response('', { status: 204 })
+          : await apollo(request, graphQLOptions)
+      setCorsHeaders(response)
+      return response
     } else if (
       graphQLOptions.playgroundEndpoint &&
       url.pathname === graphQLOptions.playgroundEndpoint
