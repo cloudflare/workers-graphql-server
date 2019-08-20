@@ -28,7 +28,7 @@ const graphQLOptions = {
   // },
 }
 
-const handleRequest = request => {
+const handleRequest = async request => {
   const url = new URL(request.url)
   try {
     if (url.pathname === graphQLOptions.baseEndpoint) {
