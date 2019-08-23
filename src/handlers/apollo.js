@@ -18,7 +18,7 @@ const createServer = graphQLOptions =>
     resolvers,
     introspection: true,
     dataSources,
-    ...(graphQLOptions.enableKvCache ? kvCache : {}),
+    ...(graphQLOptions.kvCache ? kvCache : {}),
   })
 
 const handler = (request, graphQLOptions) => {

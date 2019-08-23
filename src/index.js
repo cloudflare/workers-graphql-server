@@ -31,7 +31,7 @@ const graphQLOptions = {
   // Note that you'll need to add a KV namespace called
   // WORKERS_GRAPHQL_CACHE in your wrangler.toml file for this to
   // work! See the project README for more information.
-  enableKvCache: false
+  kvCache: false,
 }
 
 const handleRequest = async request => {
