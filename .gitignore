@@ -18,4 +18,3 @@ $RECYCLE.BIN/
 dist
 .env
 worker
-wrangler.toml
