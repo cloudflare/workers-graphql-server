@@ -16,7 +16,7 @@ You can begin building your own Workers GraphQL server by [installing Wrangler](
 wrangler generate my-graphql-server https://github.com/signalnerve/workers-graphql-server
 ```
 
-You'll need to configure your project's `wrangler.toml` file to prepare your project for deployment. See the docs (["Configuring and Publishing"](https://workers.cloudflare.com/docs/quickstart/configuring-and-publishing/)) for a guide on how to do this. Note that you'll need to [find your Cloudflare API keys](https://workers.cloudflare.com/docs/quickstart/api-keys/) to set up your config file.
+You'll need to configure your project's `wrangler.toml` file to prepare your project for deployment. See the ["Configuration"](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) docs for a guide on how to do this. Note that you'll need to [find your Cloudflare API keys](https://developers.cloudflare.com/workers/cli-wrangler/authentication/) to set up your config file.
 
 The source for this project includes an example external REST data source, and defined types for the [PokeAPI](https://pokeapi.co/), as an example of how to integrate external APIs.
 
