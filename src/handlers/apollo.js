@@ -21,8 +21,9 @@ const createServer = graphQLOptions =>
     ...(graphQLOptions.kvCache ? kvCache : {}),
   })
 
-const handler = (request, graphQLOptions) => {
+const handler = async (request, graphQLOptions) => {
   const server = createServer(graphQLOptions)
+  await server.start()
   return graphqlCloudflare(() => server.createGraphQLServerOptions(request))(request)
 }
 
