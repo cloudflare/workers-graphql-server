@@ -6,14 +6,14 @@ Why this rules: Cloudflare Workers is a serverless application platform for depl
 
 By the way - as a full-stack developer who _loves_ GraphQL, and the developer advocate for Cloudflare Workers, I would love to see what you build with this! Let me know [on Twitter](https://twitter.com/signalnerve)!
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/signalnerve/workers-graphql-server)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/workers-graphql-server)
 
 ## Usage
 
 You can begin building your own Workers GraphQL server by [installing Wrangler](https://workers.cloudflare.com/docs/quickstart/), the Workers command-line tool, and generating a new project:
 
-```
-wrangler generate my-graphql-server https://github.com/signalnerve/workers-graphql-server
+```sh
+wrangler generate my-graphql-server https://github.com/cloudflare/workers-graphql-server
 ```
 
 You'll need to configure your project's `wrangler.toml` file to prepare your project for deployment. See the ["Configuration"](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) docs for a guide on how to do this. Note that you'll need to [find your Cloudflare API keys](https://developers.cloudflare.com/workers/cli-wrangler/authentication/) to set up your config file.
@@ -80,4 +80,4 @@ With a configured KV namespace set up, you can opt-in to KV caching by changing 
 
 ## License
 
-This project is licensed with the [MIT License](https://github.com/signalnerve/workers-graphql-server/blob/master/LICENSE).
+This project is licensed with the [MIT License](https://github.com/cloudflare/workers-graphql-server/blob/master/LICENSE).
