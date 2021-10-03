@@ -18,5 +18,5 @@ module.exports = {
         type: 'javascript/auto',
       },
     ],
-  }
+  },
 }

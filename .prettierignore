@@ -1,0 +1,5 @@
+# Ignore artifacts:
+dist
+node_modules
+worker
+package*

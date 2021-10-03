@@ -29,7 +29,7 @@ const graphQLOptions = {
   forwardUnmatchedRequestsToOrigin: false, // Boolean
   debug: false, // Boolean
   cors: true, // Boolean or Object to further configure
-  kvCache: false // Boolean
+  kvCache: false, // Boolean
 }
 ```
 
@@ -58,7 +58,7 @@ const graphQLOptions = {
     allowHeaders: 'Content-type',
     allowOrigin: '*',
     allowMethods: 'GET, POST, PUT',
-  }
+  },
 }
 ```
 

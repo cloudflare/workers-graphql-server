@@ -34,7 +34,7 @@ const graphQLOptions = {
   kvCache: false,
 }
 
-const handleRequest = async request => {
+const handleRequest = async (request) => {
   const url = new URL(request.url)
   try {
     if (url.pathname === graphQLOptions.baseEndpoint) {
@@ -57,10 +57,12 @@ const handleRequest = async request => {
       return new Response('Not found', { status: 404 })
     }
   } catch (err) {
-    return new Response(graphQLOptions.debug ? err : 'Something went wrong', { status: 500 })
+    return new Response(graphQLOptions.debug ? err : 'Something went wrong', {
+      status: 500,
+    })
   }
 }
 
-addEventListener('fetch', event => {
+addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request))
 })
