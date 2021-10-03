@@ -5,9 +5,9 @@
   "version": "1.1.1",
   "author": "Kristian Freeman <kristian@bytesized.xyz>",
   "dependencies": {
-    "apollo-datasource-rest": "^0.3.2",
-    "apollo-server-cloudflare": "^2.21.0",
-    "graphql": "^14.2.1"
+    "apollo-datasource-rest": "^3.2.0",
+    "apollo-server-cloudflare": "^3.3.0",
+    "graphql": "^15.6.0"
   },
   "devDependencies": {
     "prettier": "^2.4.1",
