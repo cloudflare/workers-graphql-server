@@ -18,7 +18,22 @@ wrangler generate my-graphql-server https://github.com/cloudflare/workers-graphq
 
 You'll need to configure your project's `wrangler.toml` file to prepare your project for deployment. See the ["Configuration"](https://developers.cloudflare.com/workers/cli-wrangler/configuration/) docs for a guide on how to do this. Note that you'll need to [find your Cloudflare API keys](https://developers.cloudflare.com/workers/cli-wrangler/authentication/) to set up your config file.
 
-The source for this project includes an example external REST data source, and defined types for the [PokeAPI](https://pokeapi.co/), as an example of how to integrate external APIs.
+The source for this project includes an example external REST data source, and defined types for the [PokeAPI](https://pokeapi.co/), as an example of how to integrate external APIs. Once you have the worker available, try this query as a sanity check:
+
+```graphql
+query samplePokeAPIquery {
+  pokemon: pokemon(id:1) {
+    id,
+    name,
+    height,
+    weight,
+    sprites{
+      front_shiny,
+      back_shiny
+    }
+  }
+}
+```
 
 To start using the project, configure your `graphQLOptions` object in `src/index.js`:
 
