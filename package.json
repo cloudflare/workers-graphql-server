@@ -9,6 +9,14 @@
     "apollo-server-cloudflare": "^2.21.0",
     "graphql": "^14.2.1"
   },
+  "devDependencies": {
+    "prettier": "^2.4.1",
+    "webpack": "^5.56.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
   "license": "MIT",
   "main": "src/index.js"
 }
