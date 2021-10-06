@@ -13,7 +13,10 @@ const setCorsHeaders = (response, config) => {
     'Access-Control-Allow-Methods',
     corsConfig ? corsConfig.allowMethods : 'GET, POST',
   )
-  response.headers.set('Access-Control-Allow-Origin', corsConfig ? corsConfig.allowOrigin : '*')
+  response.headers.set(
+    'Access-Control-Allow-Origin',
+    corsConfig ? corsConfig.allowOrigin : '*',
+  )
   response.headers.set('X-Content-Type-Options', 'nosniff')
 }
 

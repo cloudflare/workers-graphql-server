@@ -1,5 +1,7 @@
 const { ApolloServer } = require('apollo-server-cloudflare')
-const { graphqlCloudflare } = require('apollo-server-cloudflare/dist/cloudflareApollo')
+const {
+  graphqlCloudflare,
+} = require('apollo-server-cloudflare/dist/cloudflareApollo')
 
 const KVCache = require('../kv-cache')
 const PokemonAPI = require('../datasources/pokeapi')
@@ -12,7 +14,7 @@ const dataSources = () => ({
 
 const kvCache = { cache: new KVCache() }
 
-const createServer = graphQLOptions =>
+const createServer = (graphQLOptions) =>
   new ApolloServer({
     typeDefs,
     resolvers,
@@ -21,9 +23,12 @@ const createServer = graphQLOptions =>
     ...(graphQLOptions.kvCache ? kvCache : {}),
   })
 
-const handler = (request, graphQLOptions) => {
+const handler = async (request, graphQLOptions) => {
   const server = createServer(graphQLOptions)
-  return graphqlCloudflare(() => server.createGraphQLServerOptions(request))(request)
+  await server.start()
+  return graphqlCloudflare(() => server.createGraphQLServerOptions(request))(
+    request,
+  )
 }
 
 module.exports = handler
