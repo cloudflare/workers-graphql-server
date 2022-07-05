@@ -1,13 +1,11 @@
 name = "workers-graphql-server"
-type = "webpack"
 
 account_id = ""
-zone_id = ""
-route = ""
 
 workers_dev = true
-webpack_config = "webpack.config.js"
 compatibility_date = "2021-10-03"
+main = "./src/index.js"
+node_compat = true
 
 # Enable a kv-namespace to use the KV caching feature
 #
@@ -18,9 +16,6 @@ compatibility_date = "2021-10-03"
 [build]
 command = "npm install && npm run build"
 
-[build.upload]
-format = "modules"
-main = "./src/index.js"
 
 [dev]
 ip = "0.0.0.0"

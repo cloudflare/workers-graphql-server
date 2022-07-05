@@ -1,6 +1,6 @@
-const apollo = require('./handlers/apollo')
-const playground = require('./handlers/playground')
-const setCors = require('./utils/setCors')
+import apollo from './handlers/apollo'
+import playground from './handlers/playground'
+import setCors from './utils/setCors'
 
 const graphQLOptions = {
   // Set the path for the GraphQL server

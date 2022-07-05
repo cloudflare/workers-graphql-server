@@ -15,7 +15,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write '**/*.{js,css,json,md}'"
+    "format": "prettier --write '**/*.{js,css,json,md}'",
+    "build": "",
+    "dev": "wrangler dev --compatibility-date=$(date -I)"
   },
   "license": "MIT",
   "main": "src/index.js"
