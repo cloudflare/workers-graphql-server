@@ -1,9 +1,9 @@
 name = "workers-graphql-server"
 type = "webpack"
 
-account_id = ""
-zone_id = ""
-route = ""
+account_id ="67b8bf6d8ad4f483905e8328b8a1ab00"
+zone_id = "6906cd55c4af2e5b9dbd592922c66f96"
+route = "my-worker.everettjennifer3000.workers.dev"
 
 workers_dev = true
 webpack_config = "webpack.config.js"
