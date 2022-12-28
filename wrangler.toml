@@ -16,7 +16,7 @@ compatibility_date = "2021-10-03"
 # Enable a kv-namespace to use the KV caching feature
 #
 # kv-namespaces = [
-#   { binding = "WORKERS_GRAPHQL_CACHE", id = "" }
+#   { binding = "WORKERS_GRAPHQL_CACHE", id = "7009e6ebe78549e2810379acff629899" }
 # ]
 
 [build]
