@@ -1,9 +1,9 @@
 name = "workers-graphql-server"
 
-account_id = ""
-
-workers_dev = true
+# More about compatibility dates: https://developers.cloudflare.com/workers/platform/compatibility-dates/
 compatibility_date = "2021-10-03"
+# opt into an upcoming fix.
+# compatibility_flags = [ "formdata_parser_supports_files" ]
 main = "./src/index.js"
 node_compat = true
 
