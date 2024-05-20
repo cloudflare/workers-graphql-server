@@ -8,7 +8,7 @@ route = ""
 workers_dev = true
 webpack_config = "webpack.config.js"
 compatibility_date = "2021-10-03"
-
+ 
 # Enable a kv-namespace to use the KV caching feature
 #
 # kv-namespaces = [
