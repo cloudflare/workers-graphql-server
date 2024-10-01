@@ -6,7 +6,7 @@ Why this rules: Cloudflare Workers is a serverless application platform for depl
 
 By the way - as a full-stack developer who _loves_ GraphQL, and the developer advocate for Cloudflare Workers, I would love to see what you build with this! Let me know [on Twitter](https://twitter.com/signalnerve)!
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/workers-graphql-server)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudy /workers-graphql-server)
 
 ## Usage
 
