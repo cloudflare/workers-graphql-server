@@ -1,29 +1,20 @@
+#:schema node_modules/wrangler/config-schema.json
 name = "workers-graphql-server"
-type = "webpack"
+main = "src/index.ts"
+compatibility_date = "2024-10-11"
+compatibility_flags = ["nodejs_compat"]
 
-account_id = ""
-zone_id = ""
-route = ""
+[observability]
+enabled = true
 
-workers_dev = true
-webpack_config = "webpack.config.js"
-compatibility_date = "2021-10-03"
+[[rules]]
+type = "Text"
+globs = ["**/*.graphql"]
+fallthrough = true
 
-# Enable a kv-namespace to use the KV caching feature
-#
-# kv-namespaces = [
-#   { binding = "WORKERS_GRAPHQL_CACHE", id = "" }
-# ]
-
-[build]
-command = "npm install && npm run build"
-
-[build.upload]
-format = "modules"
-main = "./src/index.js"
-
-[dev]
-ip = "0.0.0.0"
-port = 8787
-local_protocol="http"
-upstream_protocol="https"
+# You can bind to other Workers services and
+# use them inside your resolvers
+[[services]]
+binding = "MOVIES"
+entrypoint = "MoviesService"
+service = "d1-movie-example"
