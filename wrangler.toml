@@ -14,7 +14,7 @@ fallthrough = true
 
 # You can bind to other Workers services and
 # use them inside your resolvers
-[[services]]
-binding = "MOVIES"
-entrypoint = "MoviesService"
-service = "d1-movie-example"
+# [[services]]
+# binding = "MOVIES"
+# entrypoint = "MoviesService"
+# service = "d1-movie-example"
