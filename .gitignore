@@ -215,3 +215,5 @@ $RECYCLE.BIN/
 
 ### Cloudflare ###
 worker
+
+src/generated
