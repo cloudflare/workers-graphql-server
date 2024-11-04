@@ -4,6 +4,12 @@ import PokemonAPI from './utils/pokeapi'
 
 const createResolvers = (context: Context): Resolvers<any> => {
   return {
+    Mutation: {
+      add: async (_parent, { numberOne, numberTwo }, { cache }) => {
+        return numberOne + numberTwo
+      },
+    },
+
     Query: {
       movies: async () => {
         // You can access the context object to access any

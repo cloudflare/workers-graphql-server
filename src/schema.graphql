@@ -28,3 +28,7 @@ type Query {
   movies: [Movie!]!
   pokemon(id: ID!): Pokemon
 }
+
+type Mutation {
+  add(numberOne: Int!, numberTwo: Int!): Int!
+}
