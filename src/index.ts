@@ -58,6 +58,14 @@ const graphQLServerOptions: GraphQLServerOptions = {
 
 const app = new Hono<{ Bindings: Bindings }>()
 
+if (graphQLServerOptions.cors) {
+  if (typeof graphQLServerOptions.cors === 'boolean') {
+    app.use(cors())
+  } else {
+    app.use(cors(graphQLServerOptions.cors))
+  }
+}
+
 app.all(graphQLServerOptions.baseEndpoint, (context) => {
   return Apollo(context, graphQLServerOptions)
 })
@@ -68,14 +76,6 @@ app.all('*', async (c) => {
   }
   return new Response('Not found', { status: 404 })
 })
-
-if (graphQLServerOptions.cors) {
-  if (typeof graphQLServerOptions.cors === 'boolean') {
-    app.use(cors())
-  } else {
-    app.use(cors(graphQLServerOptions.cors))
-  }
-}
 
 app.onError((err, c) => {
   console.error(err)
